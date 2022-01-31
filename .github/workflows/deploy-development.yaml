@@ -46,6 +46,9 @@ jobs:
           forge variables set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }} --environment development
           forge deploy --environment development --verbose --non-interactive
           forge variables list
+          echo 'Data service URL: ${{ needs.generate-services-urls.outputs.data-service-url }}'
+          echo 'Migration service URL: ${{ needs.generate-services-urls.outputs.migration-service-url }}'
+          forge variables list
   # call-run-integration-tests:
   #   needs: [deployment]
   #   uses: QAS-Labs/qtest-lite-jira-plugin/.github/workflows/call-integration-tests.yml@main
