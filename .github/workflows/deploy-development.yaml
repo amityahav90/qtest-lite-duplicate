@@ -12,10 +12,16 @@ jobs:
     with:
       deployment-environment: 'Development'
 
+  generate-services-urls:
+    name: Generate Services URLs
+    uses: ./.github/workflows/generate-services-urls.yaml
+    with:
+      deployment-environment: 'Development'
+
   deployment:
     runs-on: ubuntu-latest
     environment: Development
-    needs: generate-version
+    needs: generate-version, generate-services-urls
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -35,13 +41,11 @@ jobs:
           npm install -g @forge/cli --no-optional
           forge settings set usage-analytics false
           forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
-          forge variables set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }} --environment development
-          forge variables set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }} --environment development
+          forge variables set DATA_SERVICE_URL ${{ needs.generate-services-urls.outputs.data-service-url }} --environment development
+          forge variables set MIGRATION_SERVICE_URL ${{ needs.generate-services-urls.outputs.migration-service-url }} --environment development
           forge variables set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }} --environment development
           forge deploy --environment development --verbose --non-interactive
           forge variables list
-          echo 'Data service URL: ${{ secrets.DATA_SERVICE_URL }}'
-          echo 'Migration service URL: ${{ secrets.MIGRATION_SERVICE_URL }}'
   # call-run-integration-tests:
   #   needs: [deployment]
   #   uses: QAS-Labs/qtest-lite-jira-plugin/.github/workflows/call-integration-tests.yml@main
