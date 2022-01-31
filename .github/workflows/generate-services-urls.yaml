@@ -41,7 +41,6 @@ jobs:
             echo '::set-output name=data-service-url::stg-data-service-url'
           if env.DEPLOYMENT_ENVIRONMENT == 'Production'
             echo '::set-output name=data-service-url::prd-data-service-url'
-          fi
 
       - id: generate-migration-service-url
         name: Generate Migration Service URL
@@ -52,4 +51,4 @@ jobs:
             echo '::set-output name=migration-service-url::stg-migration-service-url'
           if env.DEPLOYMENT_ENVIRONMENT == 'Production'
             echo '::set-output name=migration-service-url::prd-migration-service-url'
-          fi
+            
