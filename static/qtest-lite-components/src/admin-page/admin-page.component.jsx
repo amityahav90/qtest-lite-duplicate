@@ -25,9 +25,12 @@ function AdminPageInternal() {
 		externalCommunicationService
 			.getApplicationInternalVersion()
 			.then((version) => {
+				console.log('Version: ', version);
 				setInternalVersion(version);
 			})
-			.catch((e) => {});
+			.catch((e) => {
+				console.log('Error in internal version', e);
+			});
 	}, []);
 
 	const initializeApp = () => {
