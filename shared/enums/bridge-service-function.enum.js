@@ -35,5 +35,6 @@ export const BridgeServiceFunction = {
 	GET_TEST_CYCLES_LINK_MAP: 'get-test-cycles-link-map',
 	SET_TEST_CYCLES_LINK_MAP: 'set-test-cycles-link-map',
 	GET_TEST_RUN_ISSUES: 'get-test-run-issues',
-	UNLINK_TEST_CASES_FROM_FOLDER: 'unlink-test-cases-from-folder'
+	UNLINK_TEST_CASES_FROM_FOLDER: 'unlink-test-cases-from-folder',
+	GET_APPLICATION_INTERNAL_VERSION: 'get-application-internal-version'
 };

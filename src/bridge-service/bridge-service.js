@@ -36,7 +36,8 @@ import {
 	setProjectTestFoldersLinkMap,
 	setTestCyclesLinkMap,
 	updateTestRunCycle,
-	unlinkTestCasesFromFolder
+	unlinkTestCasesFromFolder,
+	getApplicationInternalVersion
 } from './resolver-functions';
 
 const resolver = new Resolver();
@@ -112,5 +113,7 @@ resolver.define(BridgeServiceFunction.GET_TEST_CYCLES_LINK_MAP, getTestCyclesLin
 resolver.define(BridgeServiceFunction.SET_TEST_CYCLES_LINK_MAP, setTestCyclesLinkMap);
 
 resolver.define(BridgeServiceFunction.UNLINK_TEST_CASES_FROM_FOLDER, unlinkTestCasesFromFolder);
+
+resolver.define(BridgeServiceFunction.GET_APPLICATION_INTERNAL_VERSION, getApplicationInternalVersion);
 
 export const bridgeService = resolver.getDefinitions();

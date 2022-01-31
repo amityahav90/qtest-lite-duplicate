@@ -34,3 +34,4 @@ export * from './update-test-run-cycle';
 export * from './get-test-cycles-link-map';
 export * from './set-test-cycles-link-map';
 export * from './unlink-test-cases-from-folder';
+export * from './get-application-internal-version';

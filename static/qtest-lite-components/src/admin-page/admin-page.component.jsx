@@ -6,7 +6,6 @@ import i18n from '../shared/localization/i18n';
 import { withErrorBoundaryRoot } from '../shared/error-boundary-root';
 import { ExternalCommunicationService } from '../shared/external-communication';
 import Spinner from '@atlaskit/spinner';
-import { EnvironmentVariables } from '../../../../src/shared/environment-variables';
 
 function AdminPageInternal() {
 	const log = useLogHook();
@@ -54,7 +53,7 @@ function AdminPageInternal() {
 	};
 
 	function getInternalVersion() {
-		return EnvironmentVariables.APP_INTERNAL_VERSION;
+		return externalCommunicationService.getApplicationInternalVersion();
 	}
 
 	return (

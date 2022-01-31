@@ -138,6 +138,10 @@ export class ExternalCommunicationService {
 		return this.withInvoke(BridgeServiceFunction.UNLINK_TEST_CASES_FROM_FOLDER, folder);
 	}
 
+	getApplicationInternalVersion() {
+		return this.withInvoke(BridgeServiceFunction.GET_APPLICATION_INTERNAL_VERSION);
+	}
+
 	withInvoke(functionKey, payload) {
 		return invoke(functionKey, payload);
 	}
