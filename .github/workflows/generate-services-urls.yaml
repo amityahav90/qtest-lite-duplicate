@@ -34,18 +34,22 @@ jobs:
 
       - id: generate-data-service-url
         name: Generate Data Service URL
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
-        run: echo '::set-output name=data-service-url::dev-data-service-url'
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Staging'
-        run: echo '::set-output name=data-service-url::stg-data-service-url'
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Production'
-        run: echo '::set-output name=data-service-url::prd-data-service-url'
+        run: |
+          if env.DEPLOYMENT_ENVIRONMENT == 'Development'; then
+            echo '::set-output name=data-service-url::dev-data-service-url'
+          else if env.DEPLOYMENT_ENVIRONMENT == 'Staging'; then
+            echo '::set-output name=data-service-url::stg-data-service-url'
+          else
+            echo '::set-output name=data-service-url::prd-data-service-url'
+          fi
 
       - id: generate-migration-service-url
         name: Generate Migration Service URL
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
-        run: echo '::set-output name=migration-service-url::dev-migration-service-url'
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Staging'
-        run: echo '::set-output name=migration-service-url::stg-migration-service-url'
-        if: env.DEPLOYMENT_ENVIRONMENT == 'Production'
-        run: echo '::set-output name=migration-service-url::prd-migration-service-url'
+        run: |
+          if env.DEPLOYMENT_ENVIRONMENT == 'Development'; then
+            env.DEPLOYMENT_ENVIRONMENT == 'Development'
+          else if env.DEPLOYMENT_ENVIRONMENT == 'Staging'; then
+            echo '::set-output name=migration-service-url::stg-migration-service-url'
+          else
+            echo '::set-output name=migration-service-url::prd-migration-service-url'
+          fi
