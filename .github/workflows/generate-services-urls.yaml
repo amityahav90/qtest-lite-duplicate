@@ -36,8 +36,8 @@ jobs:
       - name: Developmment
         if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
         run: |
-          echo DATA_SERVICE_URL='dev-data-service-url'
-          echo MIGRATION_SERVICE_URL='dev-migration-service-url'
+          echo '::set env.DATA_SERVICE_URL=dev-data-service-url'
+          echo '::set env.MIGRATION_SERVICE_URL=dev-migration-service-url'
 
       - name: Staging
         if: env.DEPLOYMENT_ENVIRONMENT == 'Staging'
