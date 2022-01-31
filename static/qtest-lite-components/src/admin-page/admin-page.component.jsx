@@ -12,12 +12,20 @@ function AdminPageInternal() {
 	const [appInitialized, setAppInitialized] = useState(false);
 	const externalCommunicationService = new ExternalCommunicationService();
 	const [initializationDisabled, setInitializationDisabled] = useState(false);
+	const [internalVersion, setInternalVersion] = useState('');
 
 	useEffect(() => {
 		externalCommunicationService
 			.getInternalSettings()
 			.then((internalSettings) => {
 				setAppInitialized(internalSettings.initializedApp);
+			})
+			.catch((e) => {});
+
+		externalCommunicationService
+			.getApplicationInternalVersion()
+			.then((version) => {
+				setInternalVersion(version);
 			})
 			.catch((e) => {});
 	}, []);
@@ -52,14 +60,12 @@ function AdminPageInternal() {
 			});
 	};
 
-	async function getInternalVersion() {
-		return await externalCommunicationService.getApplicationInternalVersion();
-	}
-
 	return (
 		<div className="admin-page">
 			<div className="admin-page-actions">
-				<div className="admin-page-internal-version">{getInternalVersion()}</div>
+				{internalVersion && (
+					<div className="admin-page-internal-version">{internalVersion}</div>
+				)}
 				<div className="admin-page-initialize">
 					{!appInitialized ? (
 						<div className="app-not-initialized">
