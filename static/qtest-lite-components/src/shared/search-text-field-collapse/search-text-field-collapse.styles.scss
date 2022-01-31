@@ -1,0 +1,24 @@
+.search-text-field-collapse {
+	.search-field-element {
+		width: 87px;
+		transition: 0.3s ease;
+
+		&.collapsed {
+			width: 87px;
+		}
+
+		&.expanded {
+			width: 240px;
+			animation: search-field-element 0.3s;
+		}
+	}
+
+	@keyframes search-field-element {
+		0% {
+			width: 87px;
+		}
+		100% {
+			width: 240px;
+		}
+	}
+}

@@ -1,0 +1,509 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test IssueActivityHistory component Component rendered correctly 1`] = `
+<div
+  className="issue-activity-history-container"
+>
+  <div
+    className="history-item"
+  >
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "outline": 0,
+          "position": "relative",
+          "zIndex": undefined,
+        }
+      }
+    >
+      <span
+        className="css-tx7wnu"
+      >
+        <span
+          className="css-1l72gtu-AvatarImage"
+        >
+          <span
+            aria-hidden={true}
+            className="css-60ak9x-Icon"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<svg width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" role=\\"presentation\\"><g fill=\\"currentColor\\" fill-rule=\\"evenodd\\"><path d=\\"M6 14c0-1.105.902-2 2.009-2h7.982c1.11 0 2.009.894 2.009 2.006v4.44c0 3.405-12 3.405-12 0V14z\\"/><circle cx=\\"12\\" cy=\\"7\\" r=\\"4\\"/></g></svg>",
+              }
+            }
+            role="presentation"
+            style={
+              Object {
+                "--icon-primary-color": "var(--ds-text-onBold, #FFFFFF)",
+                "--icon-secondary-color": "var(--ds-text-lowEmphasis, #8993A4)",
+              }
+            }
+          />
+        </span>
+      </span>
+    </div>
+    <span
+      className="history-item-ml5"
+    >
+      <b>
+        John Smith
+      </b>
+    </span>
+    <span
+      className="history-item-ml5"
+    >
+      made changes on
+    </span>
+    <span
+      className="history-item-ml5"
+    >
+      November 29, 2021, 9:33:30 AM
+    </span>
+  </div>
+  <div
+    className="history-item-changes"
+  >
+    <div
+      className="css-8jk8id-Container"
+    >
+      <table
+        className="css-uyynlu"
+        style={
+          Object {
+            "--local-dynamic-table-highlighted-bg": "var(--ds-background-selected-resting, #DEEBFF)",
+            "--local-dynamic-table-hover-bg": "var(--ds-background-subtleBorderedNeutral-resting, #FAFBFC)",
+            "--local-dynamic-table-hover-highlighted-bg": "var(--ds-background-selected-hover, #B3D4FF)",
+            "--local-dynamic-table-row-focus-outline": "var(--ds-border-focus, #4C9AFF)",
+          }
+        }
+      >
+        <thead
+          className="css-1qnlpdw-Head"
+        >
+          <tr>
+            <th
+              className="css-1dtsdxj"
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "--local-dynamic-table-text-color": "var(--ds-text-lowEmphasis, #5E6C84)",
+                }
+              }
+            >
+              <span>
+                Step Description
+              </span>
+            </th>
+            <th
+              className="css-1dtsdxj"
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "--local-dynamic-table-text-color": "var(--ds-text-lowEmphasis, #5E6C84)",
+                }
+              }
+            >
+              <span>
+                Changed
+              </span>
+            </th>
+            <th
+              className="css-1dtsdxj"
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "--local-dynamic-table-text-color": "var(--ds-text-lowEmphasis, #5E6C84)",
+                }
+              }
+            >
+              <span>
+                Original Value
+              </span>
+            </th>
+            <th
+              className="css-1dtsdxj"
+              onKeyDown={[Function]}
+              style={
+                Object {
+                  "--local-dynamic-table-text-color": "var(--ds-text-lowEmphasis, #5E6C84)",
+                }
+              }
+            >
+              <span>
+                New Value
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            className="css-v3yuj6"
+          >
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              Index
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            className="css-v3yuj6"
+          >
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              Index
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr
+            className="css-v3yuj6"
+          >
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              Index
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td
+              className="css-12vmjho-TableBodyCell"
+              style={
+                Object {
+                  "--local-dynamic-table-width": undefined,
+                }
+              }
+            >
+              <div
+                className="rich-textbox-view-component"
+              >
+                <div
+                  className="sc-fQkuQJ iJqztD sc-bdVaJa jGgciL"
+                >
+                  <div />
+                  <div
+                    className="sc-bNQFlB gNbClm"
+                  >
+                    <div
+                      className="sc-dRCTWM cMZerd"
+                    >
+                      <div
+                        className="sc-cgHJcJ cDGnAG sc-crNyjn ktaVza"
+                      >
+                        <div
+                          aria-label="Main content area"
+                          className=""
+                          role="textbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test IssueActivityHistory component Component rendered error message correctly 1`] = `
+<div>
+  Operation failed, please try again. If the problem persists, please contact support.
+</div>
+`;
+
+exports[`Test IssueActivityHistory component Component rendered no changes message correctly 1`] = `"There are no changes here yet"`;

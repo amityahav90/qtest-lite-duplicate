@@ -1,0 +1,40 @@
+.custom-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f4f5f7;
+	border-radius: 3px;
+	height: 26px;
+	width: 100%;
+	padding: 4px 0;
+
+	.custom-toggle-option-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 50%;
+
+		.custom-toggle-option {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			padding: 2px 0;
+			width: 100px;
+			transition: 0.2s ease-in-out;
+
+			.option-text {
+				font-size: 12px;
+				font-weight: 600;
+				color: #172b4d;
+			}
+
+			&.selected {
+				background-color: #fff;
+				box-shadow: 0 8px 12px rgba(9, 30, 66, 0.15), 0 0 1px rgba(9, 30, 66, 0.31);
+				border-radius: 3px;
+			}
+		}
+	}
+}

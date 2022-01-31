@@ -1,0 +1,42 @@
+@use '../../../../shared/design-styles/design-styles-colors' as colors;
+
+.move-to-folder-popup-menu-component-content {
+	width: 240px;
+
+	.popup-menu-search {
+		padding: 10px 15px;
+	}
+
+	.popup-menu-folders {
+		overflow-x: hidden;
+		overflow-y: auto;
+
+		margin-left: 15px;
+		max-height: 360px;
+		padding-right: 15px;
+		padding-bottom: 10px;
+
+		.all-items {
+			display: flex;
+			align-items: center;
+			height: 34px;
+			padding: 0 10px;
+			cursor: pointer;
+			border-radius: 5px;
+
+			.all-items-label {
+				margin-right: 5px;
+			}
+
+			&:hover {
+				background-color: colors.$N30;
+			}
+		}
+	}
+
+	.popup-menu-create-folder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

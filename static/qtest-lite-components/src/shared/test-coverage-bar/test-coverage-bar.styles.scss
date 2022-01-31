@@ -1,0 +1,56 @@
+@use '../../shared/design-styles/design-styles-colors' as colors;
+
+.test-coverage-bar {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	.test-coverage-bar-graph {
+		display: flex;
+		flex: 1;
+		background-color: colors.$N40;
+		margin-right: 5px;
+		height: 50%;
+		border-radius: 5px;
+		overflow: hidden;
+
+		.test-coverage-bar-status {
+			position: relative;
+
+			.status-tests-count {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				color: colors.$N0;
+				width: 10px;
+				font-size: 12px;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 50%;
+			}
+
+			&.passed {
+				background-color: colors.$G300;
+			}
+
+			&.failed {
+				background-color: colors.$R400;
+			}
+
+			&.blocked {
+				background-color: colors.$Y300;
+			}
+
+			&.unexecuted {
+				background-color: colors.$N40;
+			}
+		}
+	}
+
+	.test-coverage-bar-percentage {
+		font-size: 11px;
+		color: colors.$N500;
+	}
+}

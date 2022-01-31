@@ -1,0 +1,184 @@
+@use '../../../shared/design-styles/design-styles-colors' as colors;
+
+.project-page-reports-summary {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	padding: 40px;
+
+	.project-page-reports-summary-filters {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 32px;
+
+		.summary-filters-left {
+			display: flex;
+
+			.summary-filters-left-header {
+				display: flex;
+				align-items: center;
+				border-right: 1px solid colors.$N50;
+				padding-right: 25px;
+
+				.summary-filters-left-header-icon {
+					margin-right: 5px;
+				}
+
+				.summary-filters-left-header-text {
+					font-size: 20px;
+					color: colors.$N500;
+				}
+			}
+
+			.summary-filters-left-dropdowns {
+				display: flex;
+				align-items: center;
+				padding: 6px 12px;
+
+				.summary-filters-left-dropdown {
+					.summary-filters-popup {
+						display: flex;
+						background: colors.$N0;
+						border-radius: 8px;
+					}
+				}
+			}
+		}
+
+		.summary-filters-right {
+			display: flex;
+			align-items: center;
+
+			.summary-filters-right-add-filter {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.project-page-reports-summary-statistics {
+		display: flex;
+		height: 105px;
+		background-color: colors.$N0;
+		border: 1px solid colors.$N40;
+		margin: 30px 0;
+
+		.project-page-reports-summary-statistics-item {
+			display: flex;
+			flex: 1;
+			justify-content: center;
+
+			.summary-statistics-item {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.summary-statistics-item-count {
+					font-size: 35px;
+					font-weight: 600;
+
+					&.total-tests {
+						color: colors.$P200;
+					}
+
+					&.total-unexecuted {
+						color: colors.$R200;
+					}
+
+					&.total-executed {
+						color: colors.$G200;
+					}
+				}
+
+				.summary-statistics-item-label {
+					font-size: 12px;
+					color: colors.$N600;
+				}
+			}
+
+			&.total-unexecuted {
+				border-left: 1px solid colors.$N40;
+				border-right: 1px solid colors.$N40;
+			}
+		}
+	}
+
+	.project-page-reports-summary-charts {
+		display: flex;
+		justify-content: space-between;
+		flex: 1;
+
+		.project-page-reports-summary-chart {
+			display: flex;
+			flex-direction: column;
+			background-color: colors.$N0;
+			border: 1px solid colors.$N40;
+			border-radius: 8px;
+			padding: 30px;
+			height: 430px;
+			width: 575px;
+
+			.summary-chart-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 30px;
+
+				.summary-chart-header-title {
+					font-size: 24px;
+					font-weight: 600;
+					color: colors.$N600;
+				}
+
+				.summary-chart-header-filter {
+					border: 2px solid colors.$N40;
+				}
+			}
+
+			.summary-chart-content {
+				display: flex;
+				flex: 1;
+				justify-content: center;
+
+				.summary-chart-content-chart {
+					height: 100%;
+				}
+			}
+
+			.summary-chart-footer {
+				display: flex;
+				align-items: center;
+
+				.summary-chart-footer-text {
+					font-size: 14px;
+					color: colors.$N600;
+
+					.summary-chart-footer-text-tests-count {
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+}
+
+.popup-content {
+	max-height: 135px;
+	min-height: 120px;
+	padding: 15px;
+	overflow: auto;
+	width: 110px;
+
+	.popup-content-options {
+		display: flex;
+		flex-direction: column;
+
+		.popup-content-option {
+			padding: 4px;
+			height: 25px;
+		}
+	}
+}

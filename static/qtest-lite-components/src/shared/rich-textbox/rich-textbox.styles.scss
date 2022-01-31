@@ -1,0 +1,68 @@
+@use '../design-styles/design-styles-colors' as colors;
+
+.rich-textbox-component {
+	position: relative;
+	display: flex;
+	width: 100%;
+	border: 1px solid colors.$N30;
+	border-radius: 3px;
+
+	.rich-textbox-toggle {
+		position: absolute;
+		top: -1px;
+		right: -1px;
+		display: flex;
+		background-color: colors.$N20;
+		border: 1px solid colors.$B100;
+		border-radius: 2px;
+		cursor: pointer;
+
+		&.enabled {
+			background-color: colors.$B50;
+		}
+	}
+
+	&.textbox-collapsed {
+		background-color: colors.$N10;
+
+		& > div > div > div {
+			overflow: hidden;
+			background-color: colors.$N10;
+		}
+	}
+
+	&.textbox-chromeless {
+		div[role='textbox'] {
+			padding: 7px;
+		}
+
+		&:not(.textbox-collapsed) {
+			background-color: colors.$N0;
+			border: 1px solid colors.$B100;
+		}
+	}
+
+	&:not(.textbox-chromeless) {
+		border: none;
+
+		div[role='textbox'] {
+			margin: -15px 0px 0px;
+		}
+
+		.rich-textbox-toggle {
+			top: 0;
+			right: 0;
+		}
+
+		& > div {
+			& > div + div {
+				height: 100%;
+			}
+		}
+
+		.akEditor {
+			border-color: colors.$B100;
+			height: 100%;
+		}
+	}
+}

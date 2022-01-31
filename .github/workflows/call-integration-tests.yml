@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Call Integration Tests
+
+on:
+  workflow_call:
+    secrets:
+      DISPATCH_WORKFLOW_TOKEN:
+        required: true
+    inputs:
+      environment:
+        description: 'Target environment'
+        default: 'Staging'
+        required: false
+        type: string
+
+jobs:
+  call-integration-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run integration tests
+        uses: indiesdev/curl@v1
+        with:
+          url: https://api.github.com/repos/QAS-Labs/qtest-lite-integration-tests/actions/workflows/integration-tests.yml/dispatches
+          method: 'POST'
+          accept: 204
+          body: '{"ref": "main","inputs": {"environment": "${{ inputs.environment || github.event.inputs.environment }}"}}'
+          timeout: 1000
+          bearer-token: ${{ secrets.DISPATCH_WORKFLOW_TOKEN }}
+          is_debug: false

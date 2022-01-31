@@ -1,0 +1,199 @@
+@use '../../shared/design-styles/design-styles-colors' as colors;
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+
+	.qtest-lite-root-container {
+		height: 100%;
+		width: 100%;
+
+		.project-page-test-pad-component-loading {
+			display: flex;
+			justify-content: center;
+			padding-top: 50px;
+		}
+
+		.project-page-test-pad-component {
+			display: flex;
+			width: 100%;
+			height: 100%;
+
+			.test-pad-left {
+				display: flex;
+				flex-direction: column;
+				border-right: 1px solid colors.$N40;
+				width: 325px;
+				height: 100%;
+
+				.left-back {
+					display: flex;
+					align-items: center;
+					height: 40px;
+					border-bottom: 1px solid colors.$N40;
+
+					.left-back-btn {
+						padding: 0;
+					}
+
+					.left-back-icon {
+						transform: rotateZ(90deg);
+					}
+				}
+
+				.left-header {
+					display: flex;
+					align-items: center;
+					height: 32px;
+					margin: 20px 31px 20px 0;
+					color: colors.$N100;
+
+					.header-icon {
+						display: block;
+						width: 20px;
+						height: 20px;
+						fill: colors.$N90;
+						margin-right: 5px;
+					}
+				}
+
+				.left-search {
+					margin: 0 31px 5px 0;
+				}
+
+				.left-cycle {
+					display: flex;
+					align-items: center;
+					border-bottom: 2px solid colors.$N40;
+					background-color: colors.$N0;
+					margin-right: 31px;
+					height: 50px;
+
+					.cycle-icon {
+						display: block;
+						width: 20px;
+						height: 20px;
+						fill: colors.$N500;
+						margin-right: 10px;
+						margin-left: 3px;
+						flex-shrink: 0;
+					}
+
+					.cycle-name {
+						color: colors.$N500;
+					}
+				}
+
+				.left-test-runs-scroll {
+					padding-right: 31px;
+					overflow: auto;
+					flex: 1;
+					min-width: 0;
+					min-height: 0;
+
+					.test-runs-wrapper {
+						display: flex;
+						flex-direction: column;
+						height: 100%;
+
+						.test-runs {
+							display: flex;
+							flex-direction: column;
+							flex: 1;
+							min-width: 0;
+							min-height: 0;
+
+							.left-test-run {
+								flex-shrink: 0;
+								height: 50px;
+								padding: 10px;
+								border-bottom: 2px solid colors.$N40;
+								cursor: pointer;
+
+								.test-run-content {
+									display: flex;
+									height: 100%;
+
+									.run-status {
+										width: 3px;
+										height: 100%;
+										border-radius: 3px;
+										background-color: colors.$N90;
+										margin-right: 10px;
+										flex-shrink: 0;
+									}
+
+									.run-content-container {
+										width: 100%;
+
+										.run-key-name {
+											display: flex;
+											align-items: center;
+
+											.run-key {
+												color: colors.$B300;
+												margin-right: 5px;
+												flex-shrink: 0;
+											}
+
+											.run-name {
+												font-size: 14px;
+												font-weight: normal;
+												color: colors.$N800;
+											}
+										}
+
+										.run-user-priority {
+											display: flex;
+											align-items: center;
+											justify-content: space-between;
+
+											.run-user {
+												display: flex;
+												align-items: center;
+
+												.user-label {
+													font-size: 11px;
+													font-weight: normal;
+													color: colors.$N800;
+													margin-left: 5px;
+												}
+											}
+
+											.run-priority {
+												margin-left: 20px;
+											}
+										}
+									}
+								}
+
+								&:hover,
+								&.selected {
+									background-color: colors.$B50;
+								}
+
+								&.selected,
+								&.preselected {
+									border-bottom-color: colors.$B300;
+								}
+							}
+						}
+					}
+
+					&.qtest-has-vertical-scroll {
+						padding-right: 15px;
+					}
+				}
+			}
+
+			.test-pad-right {
+				flex: 1;
+				min-width: 0;
+				min-height: 0;
+			}
+		}
+	}
+}

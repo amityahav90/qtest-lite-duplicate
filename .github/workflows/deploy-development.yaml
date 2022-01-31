@@ -1,0 +1,48 @@
+name: Deploy Development
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-version:
+    name: Generate Version
+    uses: ./.github/workflows/generate-version.yaml
+    with:
+      deployment-environment: 'Development'
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: Development
+    needs: generate-version
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Installing the required packages and dependencies
+      - name: Install dependencies
+        run: npm install && cd static/qtest-lite-components && npm install
+
+      # Build Forge and Custom UI using webpack
+      - name: Build App
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run react:build
+
+      - name: Deploy Forge App
+        run: |
+          npm install -g @forge/cli --no-optional
+          forge settings set usage-analytics false
+          forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
+          forge variables --environment development set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }}
+          forge variables --environment development set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }}
+          forge variables --environment development set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }}
+          forge deploy --environment development --verbose --non-interactive
+  call-run-integration-tests:
+    needs: [deployment]
+    uses: QAS-Labs/qtest-lite-jira-plugin/.github/workflows/call-integration-tests.yml@main
+    with:
+      environment: Development
+    secrets:
+      DISPATCH_WORKFLOW_TOKEN: ${{ secrets.DISPATCH_WORKFLOW_TOKEN }}

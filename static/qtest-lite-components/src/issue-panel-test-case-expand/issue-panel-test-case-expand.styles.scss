@@ -1,0 +1,59 @@
+.issue-panel-test-case-expand {
+	display: flex;
+	flex-direction: column;
+
+	.iptc-expand-header {
+		display: flex;
+		height: 68px;
+		border-bottom: 2px solid #ebecf0;
+
+		.iptc-expand-header-content {
+			color: #172b4d;
+			font-size: 20px;
+			padding: 24px 0 24px 24px;
+		}
+	}
+
+	.iptc-expand-content {
+		padding: 24px;
+		overflow: auto;
+	}
+
+	.iptc-expand-footer {
+		display: flex;
+		justify-content: end;
+		height: 78px;
+		border-top: 2px solid #ebecf0;
+
+		.iptc-expand-footer-content {
+			display: flex;
+			padding: 24px 24px 24px 0;
+
+			.iptc-cancel-btn {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&.tc-modal-disabled {
+		pointer-events: none;
+		opacity: 0.4;
+
+		.iptc-expand-spinner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 0;
+			top: 0;
+			left: 50%;
+		}
+	}
+}
+
+.initial-modal-loading {
+	display: flex;
+	justify-content: center;
+	height: 200px;
+	width: 100%;
+}

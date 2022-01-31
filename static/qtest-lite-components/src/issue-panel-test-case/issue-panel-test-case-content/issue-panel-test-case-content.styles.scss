@@ -1,0 +1,382 @@
+.test-case-issue-panel {
+	display: flex;
+	flex-direction: column;
+
+	.tcip-header {
+		display: flex;
+		justify-content: space-between;
+
+		.tcip-header-section {
+			display: flex;
+			justify-content: space-between;
+
+			&.left {
+				.tcip-header-btn-expand-view {
+					width: 135px;
+					height: 32px;
+					margin-right: 10px;
+				}
+
+				.tcip-header-btn-expand-collapse {
+					width: 100px;
+					height: 32px;
+				}
+			}
+
+			&.right {
+				.tcip-header-btn-precondition {
+					width: 170px;
+					height: 32px;
+				}
+
+				.tcip-header-btn-add {
+					button {
+						width: 80px;
+						height: 32px;
+						background-color: #0052cc;
+
+						span {
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.tcip-precondition-wrapper {
+		margin: 15px 0;
+	}
+
+	.tcip-precondition {
+		display: flex;
+		align-items: center;
+		background-color: #f4f5f7;
+		border-radius: 3px;
+		padding: 8px;
+		width: 100%;
+
+		.tcip-precondition-close-btn {
+			margin-left: 10px;
+			width: 32px;
+			height: 32px;
+			padding: 4px;
+		}
+
+		&:hover,
+		&.precondition-active {
+			background-color: #deebff;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&.precondition-active {
+			.tcip-precondition-close-btn {
+				display: none;
+			}
+		}
+	}
+
+	.tcip-table {
+		display: flex;
+		flex-direction: column;
+		margin: 15px 0 20px 0;
+
+		.tcip-table-headers {
+			display: flex;
+
+			.tcip-table-header {
+				height: 16px;
+				font-size: 12px;
+				font-weight: 600;
+				color: #6b778c;
+
+				&.index {
+					width: 33px;
+				}
+
+				&.description {
+					flex: 1;
+					margin-left: 10px;
+				}
+
+				&.expected {
+					flex: 1;
+					margin-left: 10px;
+				}
+
+				&.attachments {
+					width: 85px;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.tcip-table-separator {
+			height: 2px;
+			background-color: #dfe1e6;
+			margin: 3px 0 10px;
+		}
+
+		.tcip-table-steps {
+			display: flex;
+			flex-direction: column;
+
+			.table-step-wrapper {
+				& + .table-step-wrapper {
+					margin-top: 7px;
+				}
+			}
+
+			.table-step {
+				display: flex;
+				border-radius: 3px;
+				background-color: #f4f5f7;
+				transition: height 0.3s ease;
+				width: 100%;
+
+				.table-step-item {
+					display: flex;
+					align-items: center;
+
+					.text-wrapper {
+						display: flex;
+						justify-content: center;
+						width: 100%;
+						height: 100%;
+						cursor: text;
+					}
+
+					&.index-wrapper {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background-color: #dfe1e6;
+						width: 33px;
+						border-top-left-radius: 3px;
+						border-bottom-left-radius: 3px;
+
+						.table-step-drag-icon {
+							display: none;
+							width: 14px;
+							justify-content: center;
+							position: relative;
+							flex-shrink: 0;
+							align-items: center;
+
+							& > span {
+								position: absolute;
+							}
+						}
+
+						.table-step-splitter {
+							display: none;
+							background-color: #fff;
+							width: 1px;
+							height: 100%;
+						}
+
+						.table-step-index {
+							font-size: 16px;
+							color: #42526e;
+							width: 100%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-weight: 500;
+						}
+
+						&.index-tc {
+							background-color: #c0b6f2;
+						}
+					}
+
+					&.description {
+						flex: 1;
+						margin-left: 7px;
+						margin-top: 7px;
+						margin-bottom: 7px;
+					}
+
+					&.expected {
+						flex: 1;
+						margin-left: 7px;
+						margin-top: 7px;
+						margin-bottom: 7px;
+					}
+
+					&.attachments {
+						margin-left: 10px;
+						width: 85px;
+
+						.btn-wrapper {
+							width: 32px;
+							height: 32px;
+							position: relative;
+
+							.attachments-btn {
+								padding: 4px;
+							}
+
+							.attachment-badge-wrapper {
+								position: absolute;
+								right: 0;
+								bottom: 22px;
+								left: 22px;
+							}
+
+							&:first-child {
+								margin-right: 10px;
+							}
+						}
+					}
+
+					&.tc-content {
+						display: flex;
+						justify-content: space-between;
+						flex: 1;
+
+						.tc-content-left {
+							display: flex;
+							align-items: center;
+
+							.tc-content-icon {
+								display: flex;
+								margin: 0 8px 0 12px;
+							}
+
+							.tc-content-issue-key {
+								font-size: 14px;
+								color: #0065ff;
+								margin-right: 8px;
+								cursor: pointer;
+								max-width: 240px;
+								white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								padding: 1px 0;
+							}
+
+							.tc-content-issue-summary {
+								font-size: 14px;
+								color: #091e42;
+								max-width: 480px;
+								white-space: nowrap;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								padding: 1px 0;
+							}
+						}
+
+						.tc-content-right {
+							display: flex;
+							align-items: center;
+
+							.tc-steps-count {
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								width: 65px;
+								height: 20px;
+								padding: 0 4px;
+								background-color: #c0b6f2;
+								border-radius: 3px;
+
+								.tc-steps-count-txt {
+									font-size: 14px;
+									font-weight: 400;
+									color: #403294;
+								}
+							}
+						}
+					}
+				}
+
+				&:hover,
+				&.step-active {
+					background-color: #deebff;
+
+					.table-step-item {
+						&.index-wrapper {
+							background-color: #b3d4ff;
+
+							.table-step-drag-icon {
+								display: flex;
+							}
+
+							.table-step-splitter {
+								display: block;
+							}
+						}
+					}
+				}
+
+				&.steps-expanded {
+					height: 150px;
+					transition: 0.3s ease;
+				}
+
+				&.test-case {
+					height: 54px;
+				}
+			}
+
+			.table-no-steps {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		&.spinner {
+			align-items: center;
+			margin: 50px 0;
+		}
+	}
+
+	.tcip-footer {
+		display: flex;
+		justify-content: space-between;
+
+		.tcip-footer-hint {
+			display: flex;
+			align-items: center;
+
+			.tcip-footer-hint-text {
+				font-size: 11px;
+				color: #97a0af;
+			}
+		}
+
+		.tcip-footer-buttons {
+			display: flex;
+
+			.tcip-footer-button {
+				height: 32px;
+
+				&.call-test {
+					width: 95px;
+					margin-right: 10px;
+				}
+
+				&.new-step {
+				}
+			}
+		}
+	}
+}
+
+.test-case-step-menu-item {
+	display: flex;
+	align-items: center;
+
+	.step-menu-item-icon {
+		width: 16px;
+		height: 16px;
+		fill: #42526e;
+		padding: 4px;
+	}
+
+	.step-menu-item-text {
+		margin-left: 10px;
+	}
+}

@@ -1,0 +1,178 @@
+modules:
+  jira:adminPage:
+    - key: qtest-lite-jira-plugin-admin-page
+      resource: ql-admin-page
+      resolver:
+        function: ql-bridge-service
+      title: qTest Lite
+      icon: https://tri-app-assets-test2.s3.amazonaws.com/tricentis-logo.png
+      layout: basic
+  jira:projectPage:
+    - key: qtest-lite-project-page
+      resource: ql-project-page
+      resolver:
+        function: ql-bridge-service
+      title: qTest Lite
+      icon: https://tri-app-assets-test2.s3.amazonaws.com/tricentis-logo.png
+      layout: basic
+  jira:issuePanel:
+    - key: qtest-test-case-issue-panel
+      resource: ql-issue-test-case
+      resolver:
+        function: ql-bridge-service
+      title: Test Case Panel
+      icon: https://tri-app-assets-test2.s3.amazonaws.com/tricentis-logo.png
+      displayConditions:
+        issueType: Test Case
+    - key: qtest-test-run-issue-panel
+      resource: ql-issue-test-run
+      resolver:
+        function: ql-bridge-service
+      title: Test Run Panel
+      icon: https://tri-app-assets-test2.s3.amazonaws.com/tricentis-logo.png
+      displayConditions:
+        issueType: Test Run
+  jira:issueActivity:
+    - key: qtest-lite-issue-history
+      resource: ql-issue-history
+      resolver:
+        function: ql-bridge-service
+      title: qTest History
+      displayConditions:
+        issueType: Test Case
+  jira:customField:
+    - key: qtest-lite-custom-field-folder
+      name: Folder
+      description: Indicates in which folder this issue was placed.
+      readOnly: true
+      type: object
+      formatter:
+        expression: "`${value.name}`"
+      schema:
+        properties:
+          name:
+            type: string
+          id:
+            type: string
+            searchAlias: id
+        required: [ "name", "id" ]
+      function: ql-folder
+      displayConditions:
+        issueType: Test Case
+    - key: qtest-lite-custom-field-cycle
+      name: Cycle
+      description: Indicates in which cycle this Test Run was placed.
+      readOnly: true
+      type: object
+      formatter:
+        expression: "`${value.name}`"
+      schema:
+        properties:
+          name:
+            type: string
+          id:
+            type: string
+            searchAlias: id
+        required: [ "name", "id" ]
+      function: ql-cycle
+      displayConditions:
+        issueType: Test Run
+    - key: qtest-lite-custom-field-executed-by
+      name: Executed By
+      description: The user who executed the Test Run.
+      type: user
+      displayConditions:
+        issueType: Test Run
+    - key: qtest-lite-custom-field-planned-start-date
+      name: Planned Start Date
+      description: The planned start date of the Test Run execution.
+      type: datetime
+      displayConditions:
+        issueType: Test Run
+    - key: qtest-lite-custom-field-planned-end-date
+      name: Planned End Date
+      description: The planned end date of the Test Run execution.
+      type: datetime
+      displayConditions:
+        issueType: Test Run
+  trigger:
+    - key: qtest-lite-issue-update
+      function: ql-trigger-service
+      events: [ avi:jira:updated:issue ]
+  function:
+    - key: ql-bridge-service
+      handler: index.bridgeService
+    - key: ql-trigger-service
+      handler: index.onIssueUpdate
+    - key: ql-folder
+      handler: index.customFieldFolder
+    - key: ql-cycle
+      handler: index.customFieldCycle
+resources:
+  - key: ql-admin-page
+    path: static/qtest-lite-components/dist/admin-page
+  - key: ql-project-page
+    path: static/qtest-lite-components/dist/project-page
+  - key: ql-issue-test-case
+    path: static/qtest-lite-components/dist/issue-panel-test-case
+  - key: ql-issue-test-run
+    path: static/qtest-lite-components/dist/issue-panel-test-run
+  - key: ql-issue-history
+    path: static/qtest-lite-components/dist/issue-activity-history
+  - key: ql-issue-test-case-exp
+    path: static/qtest-lite-components/dist/issue-panel-test-case-expand
+  - key: ql-issue-attachments
+    path: static/qtest-lite-components/dist/issue-attachments-modal
+  - key: ql-issue-call-to-test
+    path: static/qtest-lite-components/dist/issue-call-to-test-modal
+  - key: ql-new-cycle-modal
+    path: static/qtest-lite-components/dist/test-execution-new-cycle-modal
+  - key: ql-test-run-modal
+    path: static/qtest-lite-components/dist/test-design-new-test-run-modal
+app:
+  id: ari:cloud:ecosystem::app/485da694-2cc9-47c1-9317-bdefe29491f5
+permissions:
+  scopes:
+    - manage:jira-project
+    - manage:jira-configuration
+    - read:jira-user
+    - write:jira-work
+    - read:jira-work
+    - storage:app
+    - write:issue-type:jira
+    - read:avatar:jira
+    - read:issue-type:jira
+    - read:project-category:jira
+    - read:project:jira
+    - write:issue-link-type:jira
+    - read:issue-type-scheme:jira
+    - read:application-role:jira
+    - read:group:jira
+    - read:user:jira
+    - write:issue-type-scheme:jira
+    - write:field:jira
+    - read:field:jira
+    - read:field-configuration:jira
+    - read:custom-field-contextual-configuration:jira
+    - read:field.option:jira
+    - write:field.option:jira
+    - read:screen-tab:jira
+    - read:issue-details:jira
+    - read:field.default-value:jira
+    - read:instance-configuration:jira
+    - delete:attachment:jira
+    - read:project-version:jira
+    - write:issue:jira
+    - write:comment:jira
+    - write:comment.property:jira
+    - write:attachment:jira
+    - read:issue:jira
+    - write:issue-link:jira
+    - read:project.property:jira
+    - write:project.property:jira
+  content:
+    styles:
+      - unsafe-inline
+  external:
+    images:
+      - "*"

@@ -1,0 +1,44 @@
+name: Deploy Production
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  generate-version:
+    name: Generate Version
+    uses: ./.github/workflows/generate-version.yaml
+    with:
+      deployment-environment: 'Production'
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: Production
+    needs: generate-version
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Installing the required packages and dependencies
+      - name: Install dependencies
+        run: npm install && cd static/qtest-lite-components && npm install
+
+      # Overriding the app settings defaults
+      - name: Override App Settings
+        run: npm run app-settings:override log-levels=Info,Error
+
+      # Build Forge and Custom UI using webpack
+      - name: Build App
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run react:build
+
+      - name: Deploy Forge App
+        run: |
+          npm install -g @forge/cli --no-optional
+          forge settings set usage-analytics false
+          forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
+          forge variables --environment production set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }}
+          forge variables --environment production set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }}
+          forge variables --environment production set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }}
+          forge deploy --environment production --non-interactive

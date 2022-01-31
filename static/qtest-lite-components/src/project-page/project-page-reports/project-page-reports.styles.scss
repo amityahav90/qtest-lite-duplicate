@@ -1,0 +1,97 @@
+@use '../../shared/design-styles/design-styles-colors' as colors;
+
+.qtest-lite-project-page-reports {
+	display: flex;
+	width: 100%;
+	background: colors.$N0;
+
+	.reports-left-container {
+		display: flex;
+		flex-direction: column;
+		flex-shrink: 0;
+		width: 240px;
+		height: 100%;
+		border-right: 1px solid colors.$N40;
+		border-radius: 3px 0 0 3px;
+		position: relative;
+
+		.reports-left-container-section {
+			.reports-left-container-section-title-wrapper {
+				display: flex;
+				align-items: center;
+				height: 32px;
+
+				.reports-left-container-section-title-icon {
+					margin-right: 5px;
+				}
+
+				.reports-left-container-section-title-text {
+					color: colors.$N100;
+					font-size: 12px;
+					font-weight: 600;
+				}
+			}
+
+			.reports-left-container-section-menu-wrapper {
+				display: flex;
+				flex-direction: column;
+
+				.reports-left-container-section-menu-item {
+					display: flex;
+					align-items: center;
+					height: 32px;
+					border: 1px solid transparent;
+					cursor: pointer;
+					position: relative;
+
+					.reports-left-container-section-menu-item-name {
+						font-size: 14px;
+						font-weight: 600;
+						color: colors.$N500;
+						padding: 6px 12px;
+					}
+
+					.selected-item-right-border {
+						visibility: hidden;
+						position: absolute;
+						top: 0;
+						right: -2px;
+						bottom: 0;
+						width: 1px;
+						height: 32px;
+						background-color: colors.$N10;
+					}
+
+					&.selected {
+						border-color: colors.$N30;
+						border-right-color: transparent;
+						border-radius: 3px 0 0 3px;
+						background-color: colors.$N10;
+
+						.selected-item-right-border {
+							visibility: visible;
+						}
+					}
+
+					&:not(last-child) {
+						margin-bottom: 5px;
+					}
+				}
+			}
+
+			&.header {
+				padding-top: 30px;
+			}
+
+			&.menu {
+				padding-top: 10px;
+			}
+		}
+	}
+
+	.reports-right-container {
+		display: flex;
+		width: 100%;
+		background-color: colors.$N10;
+	}
+}

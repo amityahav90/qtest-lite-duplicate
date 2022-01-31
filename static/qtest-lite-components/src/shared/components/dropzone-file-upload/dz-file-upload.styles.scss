@@ -1,0 +1,122 @@
+.dz-container {
+	width: 555px;
+	cursor: pointer;
+
+	.dropzone {
+		background-color: #fff;
+		padding: 0 20px 20px 20px;
+
+		.dropzone-header {
+		}
+
+		.dropzone-content {
+			display: flex;
+			width: 100%;
+			max-height: 270px;
+		}
+	}
+
+	.dz-upload-icon {
+		width: 24px;
+		height: 24px;
+
+		span {
+			line-height: 2;
+		}
+	}
+
+	.dz-upload-icon-text {
+		color: #0052cc;
+	}
+
+	.thumbs-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-top: 16px;
+		overflow: auto;
+
+		.thumb {
+			display: inline-flex;
+			justify-content: center;
+			border: 1px solid #eaeaea;
+			border-radius: 2px;
+			box-sizing: border-box;
+			margin-bottom: 8px;
+			margin-right: 8px;
+			padding: 4px;
+			width: 150px;
+			height: 130px;
+			cursor: pointer;
+			position: relative;
+
+			.thumb-inner {
+				display: flex;
+				flex-direction: column;
+				min-width: 0;
+				overflow: hidden;
+
+				.dz-button-wrapper {
+					position: absolute;
+					width: 35px;
+					height: 25px;
+					display: none;
+
+					.dz-button {
+						width: 100%;
+						height: 100%;
+						padding: 0;
+					}
+
+					&.remove {
+						top: 0;
+						right: 0;
+					}
+
+					&.download {
+						top: 25px;
+						right: 0;
+					}
+				}
+
+				.dz-file {
+					height: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex: 1;
+					min-height: 0;
+					min-width: 0;
+				}
+
+				.dz-image {
+					display: block;
+					width: 100%;
+					height: auto;
+				}
+
+				.dz-image-name {
+					font-size: 14px;
+					color: #0065ff;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+					flex-shrink: 0;
+				}
+			}
+
+			&.exceeded {
+				border: 1px solid #de350b;
+				border-radius: 2px;
+			}
+
+			&:hover {
+				.thumb-inner {
+					.dz-button-wrapper {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test AdminPage component App is rendered correctly 1`] = `
+<div
+  className="admin-page"
+>
+  <div
+    className="admin-page-actions"
+  >
+    <div
+      className="admin-page-initialize"
+    >
+      <div
+        className="app-not-initialized"
+      >
+        <button
+          className="css-7bs0bd-ButtonBase"
+          disabled={false}
+          id="initialize-app-btn"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="css-7no60z-ButtonBase"
+          >
+            Initialize App
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

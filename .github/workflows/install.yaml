@@ -1,0 +1,26 @@
+name: Install
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Source environment (development, staging, production)'
+        required: true
+        default: 'development'
+      site:
+        description: 'Target Atlassian site URL (e.g. company.atlassian.net)'
+        required: true
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Forge App
+        run: |
+          echo "Installing "
+          npm install -g @forge/cli --no-optional
+          forge settings set usage-analytics false
+          forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
+          forge install --site ${{ github.event.inputs.site }} --environment ${{ github.event.inputs.environment }} --product Jira --confirm-scopes --non-interactive

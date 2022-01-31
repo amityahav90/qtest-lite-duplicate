@@ -1,0 +1,146 @@
+@use '../shared/design-styles/design-styles-colors' as colors;
+
+.test-design-new-test-run-modal {
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	height: 472px;
+
+	.new-test-run-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 30px;
+
+		.new-test-run-header-head {
+			font-size: 20px;
+			font-weight: 600;
+			color: colors.$N800;
+			margin-bottom: 15px;
+			width: 100%;
+		}
+
+		.new-test-run-header-paragraph {
+			font-size: 14px;
+			color: colors.$N800;
+		}
+	}
+
+	.new-test-run-content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+		.new-test-run-content-title {
+			font-size: 14px;
+			font-weight: 600;
+			color: colors.$N800;
+			margin-bottom: 20px;
+		}
+
+		.new-test-run-content-selection {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 30px;
+
+			.content-selection-item {
+				display: flex;
+				align-items: center;
+
+				.content-selection-item-radio {
+					margin-right: 15px;
+				}
+
+				.content-selection-item-icon {
+					display: flex;
+					margin-right: 15px;
+
+					.radio-item-icon {
+						width: 36px;
+						height: 36px;
+					}
+				}
+
+				.content-selection-item-name {
+					font-size: 14px;
+					color: colors.$N800;
+				}
+
+				& + .content-selection-item {
+					margin-top: 20px;
+				}
+			}
+		}
+
+		.new-test-run-create-cycle {
+			display: flex;
+			justify-content: space-between;
+			height: 100%;
+
+			.new-test-run-create-cycle-item {
+				display: flex;
+				flex-direction: column;
+				width: 265px;
+
+				.create-cycle-item-label {
+					font-size: 12px;
+					color: colors.$N200;
+					margin-bottom: 10px;
+
+					.label-required {
+						color: colors.$R300;
+					}
+				}
+
+				.create-cycle-item-cycle-select {
+					display: block;
+
+					&.disabled {
+						opacity: 0.4;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+	}
+
+	.new-test-run-footer {
+		display: flex;
+		justify-content: flex-end;
+
+		.new-test-run-footer-buttons {
+			display: flex;
+
+			.new-test-run-footer-button {
+				height: 32px;
+
+				&.cancel {
+					width: 66px;
+					margin-right: 10px;
+				}
+
+				&.next {
+					width: 55px;
+				}
+			}
+		}
+	}
+
+	.new-test-run-footer-loading {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		width: calc(100% - 48px);
+		top: calc(50% - 48px);
+	}
+
+	&.disabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+
+	&.new-cycle {
+		padding: 0;
+	}
+}

@@ -1,0 +1,24 @@
+@use '../../../shared/design-styles/design-styles-colors' as colors;
+
+.test-execution-version-cycles-component {
+	.version-cycles-loading {
+		display: flex;
+		justify-content: center;
+		margin: 10px 0;
+	}
+
+	.version-no-cycles-label {
+		color: colors.$N200;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.version-cycles {
+		.version-cycles-icon {
+			width: 20px;
+			height: 20px;
+			fill: colors.$N500;
+		}
+	}
+}

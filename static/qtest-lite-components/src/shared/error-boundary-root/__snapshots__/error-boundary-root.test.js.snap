@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ErrorBoundaryRoot component "fallbackRender" functionality rendered correctly 1`] = `
+<div>
+  fallbackRender functionality worked
+</div>
+`;
+
+exports[`Test ErrorBoundaryRoot component Component rendered correctly 1`] = `
+<div>
+  test
+</div>
+`;

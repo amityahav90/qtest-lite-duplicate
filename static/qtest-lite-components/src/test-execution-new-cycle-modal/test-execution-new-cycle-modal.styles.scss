@@ -1,0 +1,181 @@
+@use '../shared/design-styles/design-styles-colors' as colors;
+
+.test-execution-new-cycle-modal {
+	display: flex;
+	flex-direction: column;
+	padding: 24px 24px 0 24px;
+	position: relative;
+
+	.test-execution-new-cycle-modal-header {
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+
+		.tencm-header-text {
+			color: colors.$N800;
+		}
+	}
+
+	.test-execution-new-cycle-modal-content {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 23px;
+
+		.tencm-content-item {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+
+			.tencm-content-item-label {
+				color: colors.$N200;
+				margin-bottom: 8px;
+			}
+
+			.tencm-content-item-error {
+				display: flex;
+				align-items: center;
+				visibility: hidden;
+				margin-top: 2px;
+
+				.tencm-content-item-error-icon {
+					margin-right: 5px;
+				}
+
+				.tencm-content-item-error-text {
+					font-size: 12px;
+					color: colors.$R400;
+				}
+
+				&.visible {
+					visibility: visible;
+				}
+			}
+
+			&.name {
+				margin-bottom: 0;
+			}
+		}
+
+		.tencm-content-item-row {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+
+			.tencm-row-item {
+				width: 265px;
+				height: 60px;
+
+				.invalid-field {
+					border: 2px solid colors.$R400;
+					border-radius: 3px;
+				}
+
+				.error-text {
+					display: flex;
+					align-items: center;
+					visibility: hidden;
+					margin-top: 2px;
+
+					.tencm-row-item-error-icon {
+						margin-right: 5px;
+					}
+
+					.tencm-row-item-error-text {
+						font-size: 12px;
+						color: colors.$R400;
+					}
+
+					&.visible {
+						visibility: visible;
+					}
+				}
+
+				.tencm-row-item-label {
+					color: colors.$N200;
+				}
+
+				.datepicker-wrapper {
+					margin-top: 8px;
+				}
+
+				&.version {
+					margin-right: 20px;
+					margin-bottom: 30px;
+
+					.tencm-row-item-version-select {
+						margin-top: 8px;
+					}
+				}
+
+				&.cycle {
+					margin-bottom: 30px;
+
+					.tencm-content-item-cycle-checkbox-wrapper {
+						display: flex;
+						align-items: center;
+						margin-bottom: 4px;
+
+						.cycle-nested-checkbox {
+							margin-right: -5px;
+						}
+
+						.tencm-content-item-cycle-label {
+							color: colors.$N200;
+						}
+					}
+
+					.tencm-content-item-cycle-select {
+						display: block;
+
+						&.disabled {
+							opacity: 0.4;
+							pointer-events: none;
+						}
+					}
+				}
+
+				&.planned-start {
+					margin-right: 20px;
+					margin-bottom: 20px;
+				}
+
+				&.planned-end {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+	.test-execution-new-cycle-modal-footer {
+		display: flex;
+		justify-content: flex-end;
+
+		.tencm-footer-buttons {
+			display: flex;
+			align-items: center;
+
+			.tencm-footer-button:first-child {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.test-execution-new-cycle-modal-spinner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: calc(50% - 48px);
+	}
+
+	&.disabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+}
+
+.required-field {
+	color: colors.$R300;
+}

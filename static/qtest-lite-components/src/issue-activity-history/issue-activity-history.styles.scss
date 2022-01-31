@@ -1,0 +1,30 @@
+.issue-activity-history-spinner {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+}
+
+.issue-activity-history-container {
+	.history-item {
+		display: flex;
+		align-items: center;
+
+		.history-item-ml5 {
+			margin-left: 5px;
+		}
+
+		& + .history-item {
+			margin-bottom: 10px;
+		}
+	}
+
+	.history-item-changes {
+		margin-left: 50px;
+
+		.history-item-change {
+			& + .history-item-change {
+				margin-top: 5px;
+			}
+		}
+	}
+}

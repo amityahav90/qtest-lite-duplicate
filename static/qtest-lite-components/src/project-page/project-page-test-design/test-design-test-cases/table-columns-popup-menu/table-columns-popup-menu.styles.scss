@@ -1,0 +1,54 @@
+@use '../../../../shared/design-styles/design-styles-colors' as colors;
+
+.table-columns-popup-menu-trigger {
+	.menu-trigger-container {
+		display: flex;
+		align-items: center;
+		height: 32px;
+		padding-left: 5px;
+
+		.trigger-splitter {
+			height: 100%;
+			flex-shrink: 0;
+			background-color: #c4c4c4;
+			width: 1px;
+			margin-left: 5px;
+		}
+	}
+}
+
+.table-columns-popup-menu-content {
+	width: 275px;
+
+	.popup-menu-items {
+		overflow: auto;
+		max-height: 430px;
+
+		.items-restore-defaults {
+			display: flex;
+			align-items: center;
+			height: 50px;
+			padding: 0 20px;
+		}
+
+		.items-item {
+			display: flex;
+			align-items: center;
+			height: 32px;
+			padding: 0 15px;
+		}
+
+		.items-space {
+			height: 5px;
+		}
+	}
+
+	.popup-menu-actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 50px;
+		padding: 0 20px;
+		border-top: 1px solid colors.$N40;
+	}
+}

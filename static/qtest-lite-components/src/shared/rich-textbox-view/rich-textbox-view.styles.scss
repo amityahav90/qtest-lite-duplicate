@@ -1,0 +1,11 @@
+@use '../design-styles/design-styles-colors' as colors;
+
+.rich-textbox-component {
+	display: flex;
+	width: 100%;
+	background-color: colors.$N0;
+
+	div[role='textbox'] {
+		padding: 7px;
+	}
+}

@@ -1,0 +1,42 @@
+.admin-page {
+	display: flex;
+
+	.admin-page-actions {
+		display: flex;
+		padding: 15px;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+		.admin-page-internal-version {
+			display: flex;
+			align-items: center;
+			font-size: 12px;
+		}
+
+		.admin-page-initialize {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.app-not-initialized {
+				display: flex;
+				flex-direction: column;
+
+				.initializing-app-spinner {
+					margin-top: 20px;
+					align-self: center;
+				}
+			}
+
+			.app-initialized {
+				display: flex;
+				flex-direction: column;
+
+				.app-initialized-txt {
+					color: #42526e;
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+}

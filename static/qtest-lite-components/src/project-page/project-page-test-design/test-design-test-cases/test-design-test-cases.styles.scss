@@ -1,0 +1,231 @@
+@use '../../../shared/design-styles/design-styles-colors' as colors;
+
+.test-design-test-cases-component {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+
+	.test-cases-loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 120px;
+	}
+
+	.test-cases-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 70px;
+		padding: 0 20px;
+		border-bottom: 1px solid colors.$N40;
+
+		.header-label {
+			color: colors.$N600;
+		}
+	}
+
+	.test-design-test-cases-actions {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px;
+		height: 60px;
+
+		.action-space {
+			width: 10px;
+			flex-shrink: 0;
+		}
+
+		.test-cases-actions-left {
+			display: flex;
+			align-items: center;
+
+			.test-cases-selected {
+				font-size: 12px;
+				font-weight: bold;
+				color: colors.$N300;
+				margin-right: 15px;
+			}
+
+			.action-button {
+				width: 32px;
+				height: 32px;
+
+				&.create-cycle {
+					width: 125px;
+				}
+
+				&:disabled {
+					svg {
+						color: colors.$N70;
+					}
+
+					.action-button-move-to {
+						.action-button-move-to-absolute {
+							svg {
+								color: colors.$N0;
+							}
+						}
+					}
+				}
+			}
+
+			.action-button-icon {
+				.action-button-icon-cycle {
+					width: 20px;
+					height: 20px;
+					fill: colors.$N300;
+				}
+			}
+
+			.action-button-move-to {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: relative;
+
+				.action-button-move-to-absolute {
+					position: absolute;
+					transform: rotateZ(-135deg);
+					margin-top: 1px;
+
+					[role='presentation'] {
+						width: 14px;
+						height: 14px;
+					}
+				}
+			}
+		}
+
+		.test-cases-actions-right {
+			display: flex;
+			align-items: center;
+
+			.action-search {
+				margin-right: 10px;
+			}
+
+			.action-columns {
+				margin-left: 10px;
+			}
+
+			.action-filter {
+			}
+		}
+	}
+
+	.test-design-test-cases {
+		padding: 0 40px 0 20px;
+		border-bottom-right-radius: 3px;
+		flex: 1;
+		min-width: 0;
+		min-height: 0;
+		overflow: auto;
+
+		.folder-header {
+			display: flex;
+			align-items: center;
+			min-width: 120px;
+
+			.folder-icon {
+				display: flex;
+
+				[role='presentation'] {
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			.folder-label {
+				margin-left: 5px;
+			}
+		}
+
+		.select-all-checkbox {
+			margin-top: -3px;
+		}
+
+		tbody {
+			border-bottom-color: colors.$N20;
+
+			tr {
+				border-bottom: 2px solid colors.$N20;
+			}
+		}
+	}
+
+	.test-design-pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 60px;
+
+		.pagination-items-limit {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			left: 20px;
+			bottom: 0;
+			top: 0;
+
+			.items-limit-trigger {
+				cursor: pointer;
+
+				.trigger-container {
+					display: flex;
+					align-items: center;
+					border: 1px solid colors.$N30;
+					border-radius: 3px;
+
+					.trigger-label {
+						font-size: 14px;
+						font-weight: 500;
+						line-height: 20px;
+						padding: 0 5px;
+						color: colors.$N500;
+					}
+
+					.trigger-arrow {
+						display: flex;
+						background-color: colors.$N30;
+
+						[role='presentation'] {
+							width: 20px;
+							height: 20px;
+							color: colors.$N500;
+						}
+					}
+				}
+
+				&[aria-expanded='true'] {
+					.trigger-container {
+						border-color: colors.$N500;
+
+						.trigger-arrow {
+							background-color: colors.$N500;
+
+							[role='presentation'] {
+								color: colors.$N0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.items-total {
+			font-size: 14px;
+			font-weight: 500;
+			color: colors.$N500;
+			margin-left: 5px;
+		}
+	}
+
+	&.loading {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+}

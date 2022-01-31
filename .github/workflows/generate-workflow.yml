@@ -1,0 +1,57 @@
+name: Generate Version
+
+on:
+  workflow_call:
+    inputs:
+      deployment-environment:
+        required: true
+        type: string
+    outputs:
+      version:
+        description: "Generated version string for provided deployment environment"
+        value: ${{ jobs.generate-version.outputs.version }}
+
+jobs:
+
+  generate-version:
+    name: Generate Version
+    runs-on: ubuntu-latest
+
+    env:
+      DEPLOYMENT_ENVIRONMENT: ${{ inputs.deployment-environment }}
+
+    outputs:
+      version: ${{ steps.generate-version.outputs.version }}
+
+    steps:
+
+      - name: Print Target Environment
+        run: echo 'Generating version for ${{ env.DEPLOYMENT_ENVIRONMENT }}...'
+
+      - name: Checkout
+        if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
+        uses: actions/checkout@v2
+
+      - name: Developmment
+        if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
+        # Format: <last-tag>-<commits-number>-g<hash>
+        run: echo BUILD_TAG=$(git fetch --prune --unshallow && git describe --tags) >> $GITHUB_ENV
+
+      - name: Developmment - No Tags
+        if: env.DEPLOYMENT_ENVIRONMENT == 'Development' && env.BUILD_TAG == ''
+        # Take care of an new repo without tags and step aboves returns nothing
+        run: echo BUILD_TAG=0.0.0-${{ github.event.pull_request.number || 1 }}-g${GITHUB_SHA::8} >> $GITHUB_ENV
+
+      - name: Staging
+        if: env.DEPLOYMENT_ENVIRONMENT == 'Staging'
+        # Format: <release-branch-name>
+        run: echo BUILD_TAG=${GITHUB_REF##*/} >> $GITHUB_ENV
+
+      - name: Production
+        if: env.DEPLOYMENT_ENVIRONMENT == 'Production'
+        # Format: <tag-name>
+        run: echo BUILD_TAG=${{ github.event.inputs.tags }} >> $GITHUB_ENV
+
+      - id: generate-version
+        name: Generate Version
+        run: echo '::set-output name=version::${{ env.BUILD_TAG }}'

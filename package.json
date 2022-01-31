@@ -1,0 +1,46 @@
+{
+  "name": "qtest-lite-jira-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "app-settings:override": "node ./scripts/update-app-settings.js",
+    "forge:lint": "forge lint",
+    "forge:lint:verbose": "forge lint --verbose",
+    "forge:deploy": "forge deploy",
+    "forge:install": "forge install",
+    "forge:upgrade": "forge install --upgrade",
+    "forge:logs": "forge logs",
+    "forge:tunnel": "forge tunnel --debug",
+    "format:check": "prettier --check ./src ./shared",
+    "format:fix": "prettier --write ./src ./shared",
+    "react:test": "cd static/qtest-lite-components && npm run test",
+    "react:test:update": "cd static/qtest-lite-components && npm run test:update",
+    "react:lint": "cd static/qtest-lite-components && npm run lint",
+    "react:lint:fix": "cd static/qtest-lite-components && npm run lint:fix",
+    "react:format:check": "cd static/qtest-lite-components && npm run format:check",
+    "react:format:fix": "cd static/qtest-lite-components && npm run format:fix",
+    "react:build": "cd static/qtest-lite-components && rimraf dist && npm run build",
+    "react:build:dev": "cd static/qtest-lite-components && rimraf dist && npm run build:dev",
+    "react:watch:dev": "cd static/qtest-lite-components && rimraf dist && npm run watch:dev"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-plugin-react-hooks": "2.1.2"
+  },
+  "dependencies": {
+    "@forge/api": "2.5.0",
+    "@forge/bridge": "2.1.2",
+    "@forge/cli": "2.0.7",
+    "@forge/resolver": "1.4.1",
+    "@forge/ui": "0.16.0",
+    "i18next": "21.4.1",
+    "i18next-browser-languagedetector": "6.1.2",
+    "i18next-xhr-backend": "3.2.2",
+    "prettier": "2.4.1"
+  },
+  "browser": {
+    "@forge/bridge": false
+  }
+}

@@ -1,0 +1,32 @@
+.search-text-field-component {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	.search-input {
+		input {
+			padding-left: 26px;
+			padding-right: 5px;
+		}
+	}
+
+	.search-icon {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 7px;
+		pointer-events: none;
+	}
+
+	.search-clear {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 5px;
+		line-height: 1;
+	}
+}

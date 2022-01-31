@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository so that the workflow can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Installing the required packages and dependencies
+      - name: Install dependencies
+        run: npm install && cd static/qtest-lite-components && npm install
+
+      # Running Lint check
+      - name: Run ESLint
+        run: npm run react:lint
+
+      # Checking the code format using Prettier
+      - name: Run Prettier
+        run: cd static/qtest-lite-components && npm run format:check && cd - && npm run format:check
+
+      # Running unit tests using Jest
+      - name: Run Unit Tests
+        run: npm run react:test
+
+      # Build Custom UI using webpack
+      - name: Build App
+        run: |
+          export NODE_OPTIONS="--max-old-space-size=8192"
+          npm run react:build

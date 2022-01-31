@@ -1,0 +1,44 @@
+@use '../design-styles/design-styles-colors' as colors;
+
+.execution-status-select-component-target {
+	cursor: pointer;
+	width: 145px;
+
+	.trigger-container {
+		display: flex;
+		align-items: center;
+		border: 1px solid colors.$N30;
+		background-color: #fff;
+		border-radius: 3px;
+
+		.trigger-label {
+			display: flex;
+			align-items: center;
+			color: colors.$N500;
+			padding: 0 5px;
+			flex: 1;
+			min-width: 0;
+			min-height: 0;
+
+			span {
+				font-size: 14px;
+			}
+		}
+
+		.trigger-arrow {
+			display: flex;
+
+			[role='presentation'] {
+				width: 29px;
+				height: 29px;
+				color: colors.$N500;
+			}
+		}
+	}
+
+	&[aria-expanded='true'] {
+		.trigger-container {
+			border-color: colors.$N500;
+		}
+	}
+}

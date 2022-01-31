@@ -1,0 +1,28 @@
+@use './src/shared/design-styles/design-styles-colors' as colors;
+
+.save-panel-component {
+	display: flex;
+	flex-direction: column;
+
+	.save-panel-content {
+		display: flex;
+	}
+
+	.save-panel {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 40px;
+		background-color: colors.$B50;
+		padding: 0 5px;
+		margin-top: 2px;
+		border-radius: 0 0 3px 3px;
+
+		.save-panel-cancel {
+			color: colors.$N500;
+		}
+
+		.save-panel-save {
+		}
+	}
+}

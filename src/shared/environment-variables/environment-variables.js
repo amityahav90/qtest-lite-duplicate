@@ -1,0 +1,5 @@
+export const EnvironmentVariables = {
+	DATA_SERVICE_URL: process.env.DATA_SERVICE_URL,
+	MIGRATION_SERVICE_URL: process.env.MIGRATION_SERVICE_URL,
+	APP_INTERNAL_VERSION: process.env.APP_INTERNAL_VERSION
+};

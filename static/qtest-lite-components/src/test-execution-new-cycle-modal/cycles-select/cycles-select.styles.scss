@@ -1,0 +1,50 @@
+@use '../../shared/design-styles/design-styles-colors' as colors;
+
+.cycle-select-wrapper {
+	display: flex;
+	height: 40px;
+
+	.cycle-select-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 3px;
+		background: colors.$N20;
+		padding: 10px 8px;
+		width: 100%;
+		cursor: pointer;
+
+		.cycle-select-head-value {
+			color: colors.$N300;
+			font-size: 14px;
+
+			&.selected {
+				color: colors.$N800;
+			}
+		}
+
+		.cycle-select-head-icon {
+			width: 24px;
+			height: 24px;
+		}
+
+		&:hover {
+			background: colors.$N30;
+		}
+	}
+
+	.cycle-select-options {
+		display: flex;
+		background: colors.$N0;
+		border-radius: 8px;
+		width: 265px;
+	}
+}
+
+.content-wrapper {
+	width: 235px;
+	max-height: 135px;
+	min-height: 120px;
+	padding: 15px;
+	overflow: auto;
+}

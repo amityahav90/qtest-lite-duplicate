@@ -1,0 +1,18 @@
+{
+    "log": {
+        "levels": {
+            "allowed": [
+                "Debug",
+                "Info",
+                "Warn",
+                "Error"
+            ],
+            "value": "Debug,Info,Warn,Error"
+        }
+    },
+    "date": {
+        "format": {
+            "value": "MMMM D, YYYY, LTS"
+        }
+    }
+}

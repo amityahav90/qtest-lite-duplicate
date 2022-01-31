@@ -1,0 +1,95 @@
+@use '../shared/design-styles/design-styles-colors' as colors;
+
+$header-height: 90px;
+
+.qtest-lite-root-container {
+	height: 100%;
+	width: 100%;
+	color: #000;
+}
+
+.qtest-lite-project-page-container {
+	height: 100%;
+	width: 100%;
+
+	& > div {
+		height: 100%;
+		width: 100%;
+
+		.qtest-lite-project-page-header {
+			display: flex;
+			flex-direction: column;
+			height: $header-height;
+			flex-shrink: 0;
+			box-shadow: 0 3px 10px 0 rgb(36 64 113 / 10%);
+			z-index: 1;
+
+			.header-title-container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex: 1;
+				min-width: 0;
+				min-height: 0;
+				padding-top: 10px;
+
+				.header-logo {
+					display: flex;
+					align-items: center;
+
+					.header-icon {
+						width: 26px;
+						height: 26px;
+						fill: colors.$N500;
+						margin-right: 5px;
+						margin-top: 3px;
+					}
+
+					.header-title {
+						line-height: 29px;
+						color: colors.$N500;
+					}
+				}
+
+				.header-buttons {
+					display: flex;
+					align-items: center;
+
+					.header-try-qtest-enterprise {
+						margin-right: 10px;
+
+						&:not(:hover) {
+							background-color: colors.$P400;
+						}
+					}
+
+					.header-settings-button {
+						padding: 4px 2px;
+						margin-right: 40px;
+					}
+				}
+			}
+
+			.header-navigation-bar {
+				div[role='tablist'] {
+					div[role='tab']:first-child {
+						padding-left: 0;
+
+						&::after {
+							left: 0;
+						}
+					}
+
+					&::before {
+						left: 0;
+						right: 0;
+					}
+				}
+			}
+		}
+
+		& > div[role='tabpanel'] {
+			padding: 0;
+		}
+	}
+}
