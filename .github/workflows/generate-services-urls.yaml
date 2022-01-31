@@ -52,8 +52,8 @@ jobs:
 
       - id: generate-data-service-url
         name: Generate Data Service URL
-        run: echo '::set-output name=data-service-url::${{ env.DATA_SERVICE_URL }}'
+        run: echo '::set-output name=data-service-url::${{ $DATA_SERVICE_URL }}'
 
       - id: generate-migration-service-url
         name: Generate Migration Service URL
-        run: echo '::set-output name=migration-service-url::${{ env.MIGRATION_SERVICE_URL }}'
+        run: echo '::set-output name=migration-service-url::${{ $MIGRATION_SERVICE_URL }}'
