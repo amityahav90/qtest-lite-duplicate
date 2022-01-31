@@ -53,7 +53,7 @@ function AdminPageInternal() {
 	};
 
 	function getInternalVersion() {
-		return externalCommunicationService.getApplicationInternalVersion();
+		return await externalCommunicationService.getApplicationInternalVersion();
 	}
 
 	return (
