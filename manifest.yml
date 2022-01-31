@@ -130,7 +130,7 @@ resources:
   - key: ql-test-run-modal
     path: static/qtest-lite-components/dist/test-design-new-test-run-modal
 app:
-  id: ari:cloud:ecosystem::app/485da694-2cc9-47c1-9317-bdefe29491f5
+  id: ari:cloud:ecosystem::app/a7ee8c37-8297-499f-a8a0-33d1537e9de3
 permissions:
   scopes:
     - manage:jira-project
