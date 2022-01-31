@@ -36,7 +36,7 @@ jobs:
       - name: Developmment
         if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
         run: |
-          echo '::set env.DATA_SERVICE_URL=dev-data-service-url'
+          echo '::set-output name=data-service-url::dev-data-service-url'
           echo '::set env.MIGRATION_SERVICE_URL=dev-migration-service-url'
 
       - name: Staging
@@ -53,7 +53,13 @@ jobs:
 
       - id: generate-data-service-url
         name: Generate Data Service URL
-        run: echo '::set-output name=data-service-url::${{ env.DATA_SERVICE_URL }}'
+        run: |
+          if env.DEPLOYMENT_ENVIRONMENT == 'Development'
+            echo '::set-output name=data-service-url::dev-data-service-url'
+          if env.DEPLOYMENT_ENVIRONMENT == 'Staging'
+             echo '::set-output name=data-service-url::stg-data-service-url'
+          if env.DEPLOYMENT_ENVIRONMENT == 'Production'
+             echo '::set-output name=data-service-url::prd-data-service-url'
 
       - id: generate-migration-service-url
         name: Generate Migration Service URL
