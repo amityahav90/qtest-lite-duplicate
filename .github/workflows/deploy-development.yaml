@@ -39,10 +39,10 @@ jobs:
           forge variables --environment development set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }}
           forge variables --environment development set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }}
           forge deploy --environment development --verbose --non-interactive
-  call-run-integration-tests:
-    needs: [deployment]
-    uses: QAS-Labs/qtest-lite-jira-plugin/.github/workflows/call-integration-tests.yml@main
-    with:
-      environment: Development
-    secrets:
-      DISPATCH_WORKFLOW_TOKEN: ${{ secrets.DISPATCH_WORKFLOW_TOKEN }}
+  # call-run-integration-tests:
+  #   needs: [deployment]
+  #   uses: QAS-Labs/qtest-lite-jira-plugin/.github/workflows/call-integration-tests.yml@main
+  #   with:
+  #     environment: Development
+  #   secrets:
+  #     DISPATCH_WORKFLOW_TOKEN: ${{ secrets.DISPATCH_WORKFLOW_TOKEN }}
