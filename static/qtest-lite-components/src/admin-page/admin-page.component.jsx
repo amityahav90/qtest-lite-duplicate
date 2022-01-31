@@ -52,7 +52,7 @@ function AdminPageInternal() {
 			});
 	};
 
-	function getInternalVersion() {
+	async function getInternalVersion() {
 		return await externalCommunicationService.getApplicationInternalVersion();
 	}
 
