@@ -13,15 +13,15 @@ jobs:
       - run: echo 'Hello'
 
       - name: Deploy Forge App
-          run: |
-            npm install -g @forge/cli --no-optional
-            forge settings set usage-analytics false
-            forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
-            forge variables set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }} --environment development
-            forge variables set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }} --environment development
-            forge variables set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }} --environment development
-            forge deploy --environment development --verbose --non-interactive
-            forge variables list
-            echo 'Data service URL: ${{ secrets.DATA_SERVICE_URL }}'
-            echo 'Email: ${{ secrets.FORGE_EMAIL }}'
+        run: |
+          npm install -g @forge/cli --no-optional
+          forge settings set usage-analytics false
+          forge login --email ${{ secrets.FORGE_EMAIL }} --token ${{ secrets.FORGE_TOKEN }} --non-interactive
+          forge variables set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }} --environment development
+          forge variables set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }} --environment development
+          forge variables set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }} --environment development
+          forge deploy --environment development --verbose --non-interactive
+          forge variables list
+          echo 'Data service URL: ${{ secrets.DATA_SERVICE_URL }}'
+          echo 'Email: ${{ secrets.FORGE_EMAIL }}'
    
