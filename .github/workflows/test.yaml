@@ -20,7 +20,7 @@ jobs:
           forge variables set DATA_SERVICE_URL ${{ secrets.DATA_SERVICE_URL }} --environment development
           forge variables set MIGRATION_SERVICE_URL ${{ secrets.MIGRATION_SERVICE_URL }} --environment development
           forge variables set APP_INTERNAL_VERSION ${{ needs.generate-version.outputs.version }} --environment development
-          forge deploy --environment development --verbose --non-interactive
+          # forge deploy --environment development --verbose --non-interactive
           forge variables list
           echo 'Data service URL: ${{ secrets.DATA_SERVICE_URL }}'
           echo 'Email: ${{ secrets.FORGE_EMAIL }}'
