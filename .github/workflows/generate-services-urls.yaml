@@ -22,8 +22,6 @@ jobs:
 
     env:
       DEPLOYMENT_ENVIRONMENT: ${{ inputs.deployment-environment }}
-      DATA_SERVICE_URL: ''
-      MIGRATION_SERVICE_URL: ''
 
     outputs:
       data-service-url: ${{ steps.generate-data-service-url.outputs.data-service-url }}
@@ -36,31 +34,25 @@ jobs:
       - name: Developmment
         if: env.DEPLOYMENT_ENVIRONMENT == 'Development'
         run: |
-          echo '::set-output name=data-service-url::dev-data-service-url'
-          echo '::set env.MIGRATION_SERVICE_URL=dev-migration-service-url'
+          echo 'DATA_URL=dev-data-service-url >> $GITHUB_ENV'
+          echo 'MIGRATION_URL=dev-migration-service-url >> $GITHUB_ENV'
 
       - name: Staging
         if: env.DEPLOYMENT_ENVIRONMENT == 'Staging'
         run: | 
-          echo DATA_SERVICE_URL='stg-data-service-url'
-          echo MIGRATION_SERVICE_URL='stg-migration-service-url'
+          echo 'DATA_URL=stg-data-service-url >> $GITHUB_ENV'
+          echo 'MIGRATION_URL=stg-migration-service-url >> $GITHUB_ENV'
 
       - name: Production
         if: env.DEPLOYMENT_ENVIRONMENT == 'Production'
         run: | 
-          echo DATA_SERVICE_URL='prd-data-service-url'
-          echo MIGRATION_SERVICE_URL='prd-migration-service-url'
+          echo 'DATA_URL=prd-data-service-url >> $GITHUB_ENV'
+          echo 'MIGRATION_URL=prd-migration-service-url >> $GITHUB_ENV'
 
       - id: generate-data-service-url
         name: Generate Data Service URL
-        run: |
-          if env.DEPLOYMENT_ENVIRONMENT == 'Development'
-            echo '::set-output name=data-service-url::dev-data-service-url'
-          if env.DEPLOYMENT_ENVIRONMENT == 'Staging'
-             echo '::set-output name=data-service-url::stg-data-service-url'
-          if env.DEPLOYMENT_ENVIRONMENT == 'Production'
-             echo '::set-output name=data-service-url::prd-data-service-url'
+        run: echo '::set-output name=data-service-url::${{ env.DATA_URL }}'
 
       - id: generate-migration-service-url
         name: Generate Migration Service URL
-        run: echo '::set-output name=migration-service-url::${{ env.MIGRATION_SERVICE_URL }}'
+        run: echo '::set-output name=migration-service-url::${{ env.MIGRATION_URL }}'
