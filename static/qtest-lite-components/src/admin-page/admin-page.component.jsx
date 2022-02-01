@@ -66,7 +66,7 @@ function AdminPageInternal() {
 	return (
 		<div className="admin-page">
 			<div className="admin-page-actions">
-				{internalVersion && (
+				{internalVersion && JSON.stringify(internalVersion) !== '{}' && (
 					<div className="admin-page-internal-version">{internalVersion}</div>
 				)}
 				<div className="admin-page-initialize">
