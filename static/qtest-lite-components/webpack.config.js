@@ -128,88 +128,92 @@ module.exports = function (_env, argv) {
 		}
 	});
 
-	const projectPage = Object.assign({}, config, {
-		entry: './src/project-page/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/project-page'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const projectPage = Object.assign({}, config, {
+	// 	entry: './src/project-page/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/project-page'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issuePanelTestCase = Object.assign({}, config, {
-		entry: './src/issue-panel-test-case/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-panel-test-case'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issuePanelTestCase = Object.assign({}, config, {
+	// 	entry: './src/issue-panel-test-case/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-panel-test-case'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issuePanelTestRun = Object.assign({}, config, {
-		entry: './src/issue-panel-test-run/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-panel-test-run'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issuePanelTestRun = Object.assign({}, config, {
+	// 	entry: './src/issue-panel-test-run/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-panel-test-run'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issueActivityHistory = Object.assign({}, config, {
-		entry: './src/issue-activity-history/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-activity-history'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issueActivityHistory = Object.assign({}, config, {
+	// 	entry: './src/issue-activity-history/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-activity-history'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issuePanelTestCaseExpand = Object.assign({}, config, {
-		entry: './src/issue-panel-test-case-expand/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-panel-test-case-expand'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issuePanelTestCaseExpand = Object.assign({}, config, {
+	// 	entry: './src/issue-panel-test-case-expand/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-panel-test-case-expand'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issueAttachmentsModal = Object.assign({}, config, {
-		entry: './src/issue-attachments-modal/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-attachments-modal'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issueAttachmentsModal = Object.assign({}, config, {
+	// 	entry: './src/issue-attachments-modal/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-attachments-modal'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const issueCallToTestModal = Object.assign({}, config, {
-		entry: './src/issue-call-to-test-modal/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/issue-call-to-test-modal'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const issueCallToTestModal = Object.assign({}, config, {
+	// 	entry: './src/issue-call-to-test-modal/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/issue-call-to-test-modal'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const testExecutionNewCycleModal = Object.assign({}, config, {
-		entry: './src/test-execution-new-cycle-modal/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/test-execution-new-cycle-modal'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const testExecutionNewCycleModal = Object.assign({}, config, {
+	// 	entry: './src/test-execution-new-cycle-modal/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/test-execution-new-cycle-modal'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
 
-	const testDesignNewTestRunModal = Object.assign({}, config, {
-		entry: './src/test-design-new-test-run-modal/index.js',
-		output: {
-			path: path.resolve(__dirname, 'dist/test-design-new-test-run-modal'),
-			filename: 'assets/js/[name].[contenthash:8].js'
-		}
-	});
+	// const testDesignNewTestRunModal = Object.assign({}, config, {
+	// 	entry: './src/test-design-new-test-run-modal/index.js',
+	// 	output: {
+	// 		path: path.resolve(__dirname, 'dist/test-design-new-test-run-modal'),
+	// 		filename: 'assets/js/[name].[contenthash:8].js'
+	// 	}
+	// });
+
+	// return [
+	// 	adminPage,
+	// 	projectPage,
+	// 	issuePanelTestCase,
+	// 	issuePanelTestRun,
+	// 	issueActivityHistory,
+	// 	issuePanelTestCaseExpand,
+	// 	issueAttachmentsModal,
+	// 	issueCallToTestModal,
+	// 	testExecutionNewCycleModal,
+	// 	testDesignNewTestRunModal
+	// ];
 
 	return [
-		adminPage,
-		projectPage,
-		issuePanelTestCase,
-		issuePanelTestRun,
-		issueActivityHistory,
-		issuePanelTestCaseExpand,
-		issueAttachmentsModal,
-		issueCallToTestModal,
-		testExecutionNewCycleModal,
-		testDesignNewTestRunModal
+		adminPage
 	];
 };
